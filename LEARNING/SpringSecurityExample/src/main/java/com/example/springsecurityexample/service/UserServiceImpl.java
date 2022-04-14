@@ -43,13 +43,13 @@ public class UserServiceImpl implements UserService{
             userRepository.save(user1);
 
             Role role = new Role();
-            role.setRoleCode("ADMIN");
-            role.setRoleName("Quyen Admin");
+            role.setRoleCode("USER");
+            role.setRoleName("Quyen User");
             roleRepository.save(role);
 
             User_Role user_role = new User_Role();
             user_role.setRole(role);
-            user_role.setUser(user);
+            user_role.setUser(user1);
             userRoleRepository.save(user_role);
         }
         return null;
@@ -62,8 +62,6 @@ public class UserServiceImpl implements UserService{
             return true;
         }
         return false;
-
-
     }
 
     @Override

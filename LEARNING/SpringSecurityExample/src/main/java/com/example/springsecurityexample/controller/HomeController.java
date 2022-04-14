@@ -14,6 +14,7 @@ public class HomeController {
         return "index";
     }
 
+    @Secured("USER")
     @GetMapping("/home-page")
     public String homePage() {
         Authentication authen =  SecurityContextHolder.getContext().getAuthentication();
